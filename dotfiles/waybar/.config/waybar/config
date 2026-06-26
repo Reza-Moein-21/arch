@@ -1,22 +1,91 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 30,
-  "spacing": 10,
+  "height": 8,
+  "spacing": 6,
 
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": [],
-  "modules-right": ["pulseaudio", "network", "cpu", "memory", "clock", "tray"],
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["tray","wireplumber", "bluetooth", "network", "hyprland/language", "power-profiles-daemon", "battery"],
 
   "hyprland/workspaces": {
-    "format": "{name}",
-    "on-click": "activate",
+    "format": "{icon}: {name} ",
+    "format-icons": {
+   	"active": "",
+	"default": ""
+    },
     "sort-by-number": true
   },
 
-  "clock": {
-    "format": "{:%I:%M %p}"
+  "hyprland/window": {
+    "format": "{title}",
+    "icon" : true,
+    "icon-size": 18,
+    "max-length": 40,
+    "separate-outputs": true
   },
+
+  "hyprland/language": {
+    "format": "  {}",
+    "format-en": "EN",
+    "format-fa": "FA",
+    "tooltip": true,
+    "on-click": "hyprctl switchxkblayout current next"
+  },
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+
+  "bluetooth": {
+	"format": " {status}",
+	"format-connected": " {device_alias}",
+	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+  },
+
+  "battery": {
+      "format": "{capacity}% {icon}",
+      "format-icons": ["", "", "", "", ""]
+  },
+
+  "clock": {
+        "format": "{:%F | %I:%M %p}",
+        "format-alt": "{:L%A, %B %d, %Y (%R)}",
+        "tooltip-format": "<span>{calendar}</span>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+    },
 
   "network": {
     "format-wifi": " {essid}",
@@ -24,16 +93,10 @@
     "format-disconnected": "󰖪 Offline"
   },
 
-  "pulseaudio": {
-    "format": " {volume}%",
-    "format-muted": " muted"
-  },
-
-  "cpu": {
-    "format": " {usage}%"
-  },
-
-  "memory": {
-    "format": " {percentage}%"
+  "wireplumber": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "on-click": "helvum",
+    "format-icons": ["", "", ""]
   }
 }

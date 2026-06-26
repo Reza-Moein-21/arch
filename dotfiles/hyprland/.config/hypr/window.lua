@@ -48,3 +48,15 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+
+hl.window_rule({
+    name = "kitty",
+    match = { class = "kitty" },
+    workspace = "1"
+})
+
+hl.window_rule({
+    name = "chromium",
+    match = { class ="chromium" },
+    workspace = "2"
+})

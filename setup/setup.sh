@@ -13,7 +13,8 @@ packages=(
     base-devel eza btop bash-completion zip unzip unrar-free
     ntfs-3g uwsm libnewt git less github-cli lazygit neovim
     wl-clipboard fzf dunst pipewire wireplumber udisks2 udiskie
-    bat stow starship fontconfig
+    bat stow starship fontconfig man-db tmux remmina freerdp
+    power-profiles-daemon
 
     # GNOME Desktop
     gnome-shell gdm gnome-session gnome-control-center
@@ -22,7 +23,7 @@ packages=(
     qt5-wayland qt6-wayland
 
     # Themes
-    nwg-look pop-gtk-theme pop-icon-theme
+    nwg-look pop-gtk-theme pop-icon-theme inter-font
 
     # Graphics
     nvidia-utils intel-media-driver
@@ -34,7 +35,7 @@ packages=(
     networkmanager networkmanager-openconnect openconnect tor 
 
     # Multimedia
-    mpv chromium yazi waybar
+    mpv celluloid chromium yazi waybar loupe photoflare
 
     # Docker
     docker docker-compose lazydocker

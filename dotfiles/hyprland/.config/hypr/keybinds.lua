@@ -11,13 +11,15 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd(browser .. " --incognito"))
-hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("~/.config/hypr/scripts/cycle_wallpaper.sh"))
 -- hl.bind(mainMod .. " + CTRL + V", hl.dsp.exec_cmd("/bin/bash /home/moein/.config/hypr/scripts/vpn.sh"))
 hl.bind(mainMod .. " + ALT + Escape", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 
+-- Toggle waybar
+hl.bind(mainMod .. " + B",hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/toggle-waybar.sh"))
 
 --------------------------------------------------
 -- Window Management
@@ -43,11 +45,6 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 
-hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
-
 --------------------------------------------------
 -- Window Movement
 --------------------------------------------------
@@ -57,24 +54,14 @@ hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" 
 hl.bind(mainMod .. " + SHIFT + up",    hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + down",  hl.dsp.window.move({ direction = "down" }))
 
-hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
-hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
-hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
-
 --------------------------------------------------
 -- Window Resize
 --------------------------------------------------
 
-hl.bind(mainMod .. " + CTRL + right", hl.dsp.window.resize({ x = 20,  y = 0,  relative = true }), { repeating = true })
-hl.bind(mainMod .. " + CTRL + left",  hl.dsp.window.resize({ x = -20, y = 0,  relative = true }), { repeating = true })
-hl.bind(mainMod .. " + CTRL + down",    hl.dsp.window.resize({ x = 0,   y = 20, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + CTRL + up",  hl.dsp.window.resize({ x = 0,   y = -20, relative = true }), { repeating = true })
-
-hl.bind(mainMod .. " + CTRL + L", hl.dsp.window.resize({ x = 20,  y = 0,  relative = true }), { repeating = true })
-hl.bind(mainMod .. " + CTRL + H",  hl.dsp.window.resize({ x = -20, y = 0,  relative = true }), { repeating = true })
-hl.bind(mainMod .. " + CTRL + J",    hl.dsp.window.resize({ x = 0,   y = 20, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + CTRL + K",  hl.dsp.window.resize({ x = 0,   y = -20, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + CTRL + right", hl.dsp.window.resize({ x = 20,  y = 0,  relative = true }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + CTRL + left",  hl.dsp.window.resize({ x = -20, y = 0,  relative = true }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + CTRL + down",    hl.dsp.window.resize({ x = 0,   y = 20, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + CTRL + up",  hl.dsp.window.resize({ x = 0,   y = -20, relative = true }), { repeating = true })
 
 --------------------------------------------------
 -- Workspaces
