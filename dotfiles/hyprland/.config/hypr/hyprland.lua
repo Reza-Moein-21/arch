@@ -15,7 +15,7 @@
 -- require("myColors")
 
 -- Set programs that you use
-_G.terminal="kitty"
+_G.terminal="alacritty"
 _G.fileManager = "nautilus"
 _G.browser = "chromium"
 _G.menu        = "wofi --show drun,run"

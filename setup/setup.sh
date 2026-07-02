@@ -10,11 +10,12 @@ echo "Installing packages..."
 
 packages=(
     # System Tools & Shell Enhancements
-    base-devel eza btop bash-completion zip unzip unrar-free
-    ntfs-3g uwsm libnewt git less github-cli lazygit neovim
-    wl-clipboard fzf dunst pipewire wireplumber udisks2 udiskie
-    bat stow starship fontconfig man-db tmux remmina freerdp
+    base-devel btop bash-completion zip unzip unrar-free
+    ntfs-3g uwsm libnewt less zsh zsh-completions 
+    wl-clipboard dunst pipewire wireplumber udisks2 udiskie
+    zsh eza bat fd fzf zoxide ripgrep stow starship fontconfig man-db tmux remmina freerdp
     power-profiles-daemon
+    # ghostty ghostty-nautilus
 
     # GNOME Desktop
     gnome-shell gdm gnome-session gnome-control-center
@@ -26,7 +27,7 @@ packages=(
     nwg-look pop-gtk-theme pop-icon-theme inter-font
 
     # Graphics
-    nvidia-utils intel-media-driver
+    nvidia-open nvidia-utils intel-media-driver
 
     # Hyprland
     hyprlock hypridle hyprpaper brightnessctl xdg-desktop-portal-hyprland
@@ -39,6 +40,10 @@ packages=(
 
     # Docker
     docker docker-compose lazydocker
+
+    # Development
+    base-devel lldb gdb pkgconf cmake rust rust-analyzer ollama 
+    git github-cli lazygit neovim nvm
 )
 
 sudo pacman -S --needed --noconfirm "${packages[@]}"
@@ -48,5 +53,6 @@ echo "Running post-install scripts..."
 source ./nopass-openconnect.sh
 source ./defaults-mime.sh
 source ./docker-setup.sh
+source ./zsh-setup.sh
 
 echo "Done."

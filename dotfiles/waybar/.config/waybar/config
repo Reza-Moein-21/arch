@@ -1,8 +1,8 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 8,
-  "spacing": 6,
+  "height": 28,
+  "spacing": 4,
 
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": ["clock"],
@@ -14,7 +14,10 @@
    	"active": "",
 	"default": ""
     },
-    "sort-by-number": true
+    "sort-by-number": true,
+    "disable-scroll": false,
+    "all-outputs": false,
+    "disable-click": false
   },
 
   "hyprland/window": {
@@ -26,7 +29,7 @@
   },
 
   "hyprland/language": {
-    "format": "  {}",
+    "format": " {}",
     "format-en": "EN",
     "format-fa": "FA",
     "tooltip": true,
@@ -46,9 +49,9 @@
   },
 
   "bluetooth": {
-	"format": " {status}",
-	"format-connected": " {device_alias}",
-	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+	"format": "{status}",
+	"format-connected": "{device_alias}",
+	"format-connected-battery": "{device_alias} {device_battery_percentage}%",
 	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
 	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
 	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
@@ -64,27 +67,7 @@
   "clock": {
         "format": "{:%F | %I:%M %p}",
         "format-alt": "{:L%A, %B %d, %Y (%R)}",
-        "tooltip-format": "<span>{calendar}</span>",
-        "calendar": {
-                    "mode"          : "year",
-                    "mode-mon-col"  : 3,
-                    "weeks-pos"     : "right",
-                    "on-scroll"     : 1,
-                    "format": {
-                              "months":     "<span color='#ffead3'><b>{}</b></span>",
-                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-                              }
-                    },
-        "actions":  {
-                    "on-click-right": "mode",
-                    "on-click-forward": "tz_up",
-                    "on-click-backward": "tz_down",
-                    "on-scroll-up": "shift_up",
-                    "on-scroll-down": "shift_down"
-                    }
+        "tooltip-format": "<span>{calendar}</span>"
     },
 
   "network": {
@@ -94,9 +77,9 @@
   },
 
   "wireplumber": {
-    "format": "{volume}% {icon}",
+    "format": "{icon} {volume}%",
     "format-muted": "",
     "on-click": "helvum",
-    "format-icons": ["", "", ""]
+    "format-icons": ["",""," "]
   }
 }

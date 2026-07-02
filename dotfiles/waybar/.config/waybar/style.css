@@ -1,165 +1,195 @@
-/* --- Global Styles --- */
+/* -----------------------------------------------------
+ * Waybar - Catppuccin Mocha
+ * ----------------------------------------------------- */
+
 * {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  min-height: 0;
-  padding-right: 0px;
-  padding-left: 0px;
-  padding-bottom: 0px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+
+    font-family: "Vazirmatn", "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    font-weight: 600;
 }
 
-/* --- Waybar Container --- */
-#waybar {
-  background: transparent;
-  color: #c6d0f5;
-  margin: 0px;
-  font-weight: 500;
+window#waybar {
+    background: #1e1e2e;
+    color: #cdd6f4;
+    border-bottom: 1px solid #313244;
 }
 
-window#waybar.empty #window {
-    background-color: transparent;
-}
+/* -----------------------------------------------------
+ * Common module styling
+ * ----------------------------------------------------- */
 
+#workspaces,
+#window,
+#clock,
 #tray,
 #wireplumber,
 #bluetooth,
 #network,
 #language,
 #power-profiles-daemon,
-#battery,
-#workspaces,
-#window
-{
-  background-color: #1a1b26;
-  padding: 0.3rem 0.7rem;
-  margin: 5px 0px; /* 5px top/bottom margin, 0px left/right (base for individual control) */
-  border-radius: 6px; /* These modules are always rounded */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  min-width: 0;
-  border: none;
-  /* Transition for background-color and color only */
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+#battery {
+    background: transparent;
+    color: #cdd6f4;
+
+    font-family: "CaskaydiaCove Nerd Font";
+    padding: 0 8px;
+    margin: 0;
 }
-#tray:hover,
-#wireplumber:hover,
-#bluetooth:hover,
-#network:hover,
-#language:hover,
-#power-profiles-daemon:hover,
-#battery:hover,
-#workspaces:hover,
-#window:hover,
-#battery:hover,
-#clock:hover
-{
-  background-color: rgb(41, 42, 53);
-}
+
+/* -----------------------------------------------------
+ * Workspaces
+ * ----------------------------------------------------- */
+
 #workspaces {
-  padding: 2px;
-  margin-left: 7px; /* Margin from the far left edge */
-  margin-right: 5px; /* Spacing after the workspaces module */
+    padding-left: 6px;
 }
 
 #workspaces button {
-  color: #babbf1;
-  border-radius: 5px; /* Workspaces buttons are always rounded */
-  padding: 0.3rem 0.6rem;
-  background: transparent;
-  transition: all 0.2s ease-in-out;
-  border: none;
-  outline: none;
+    padding: 0 6px;
+    margin: 0;
+    color: #6c7086;
+    background: transparent;
+    transition: all 150ms ease;
 }
 
 #workspaces button.active {
-  color: #99d1db;
-  background-color: rgba(153, 209, 219, 0.1);
-  box-shadow: inset 0 0 0 1px rgba(153, 209, 219, 0.2);
+    color: #89b4fa;
 }
 
 #workspaces button:hover {
-  background: rgb(41, 42, 53); /* Reference bright hover color */
-  color: #c6d0f5;
+    color: #cdd6f4;
+    background: #313244;
+    box-shadow: inset 0 -2px #89b4fa;
 }
+
+/* -----------------------------------------------------
+ * Window title
+ * ----------------------------------------------------- */
+
+#window {
+    color: #a6e3a1;
+}
+
+/* -----------------------------------------------------
+ * Clock
+ * ----------------------------------------------------- */
 
 #clock {
-  background-color: #1a1b26;
-  padding: 0.3rem 0.7rem;
-  margin: 5px 0px;
-  border-radius: 6px; /* This module is always rounded */
-  box-shadow: 0 1px 3px rgba(153, 209, 219, 0.2);
-  min-width: 0;
-  border: none;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    color: #f9e2af;
 }
 
-#clock {
-  color: #99d1db;
-  font-weight: 500;
-}
-
-
+/* -----------------------------------------------------
+ * Audio
+ * ----------------------------------------------------- */
 
 #wireplumber {
-  color: #c6d0f5;
+    color: #89dceb;
 }
 
+#wireplumber.muted {
+    color: #6c7086;
+}
+
+/* -----------------------------------------------------
+ * Bluetooth
+ * ----------------------------------------------------- */
+
+#bluetooth {
+    color: #94e2d5;
+}
+
+#bluetooth.disabled {
+    color: #6c7086;
+}
+
+/* -----------------------------------------------------
+ * Network
+ * ----------------------------------------------------- */
+
 #network {
-  color: #c6d0f5;
+    color: #89b4fa;
 }
 
 #network.disconnected {
-  color: #e78284;
+    color: #f38ba8;
 }
 
-#bluetooth {
-  margin-left: 0px; 
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  color: #888888;
-  font-size: 16px;
-}
-#bluetooth.on {
-  color: #2196f3;
-}
-#bluetooth.connected {
-  color: #99d1db;
+/* -----------------------------------------------------
+ * Keyboard layout
+ * ----------------------------------------------------- */
+
+#language {
+    color: #cba6f7;
 }
 
-#battery {
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  margin-right: 7px;
-  padding: 0 1rem;
-  color: #99d1db;
-}
-#battery.charging {
-  color: #a6d189;
-}
-#battery.warning:not(.charging) {
-  color: #e78284;
-}
+/* -----------------------------------------------------
+ * Power profile
+ * ----------------------------------------------------- */
 
 #power-profiles-daemon {
-  padding-right: 1.5rem;
-  padding-left: 1rem;
-}
-#power-profiles-daemon.performance {
-  color: #e78284;
+    color: #f5c2e7;
 }
 
-#power-profiles-daemon.power-saver {
-  color: #a6d189;
+/* -----------------------------------------------------
+ * Battery
+ * ----------------------------------------------------- */
+
+#battery {
+    color: #a6e3a1;
 }
-/* --- Tooltip Styles --- */
+
+#battery.warning {
+    color: #fab387;
+}
+
+#battery.critical {
+    color: #f38ba8;
+}
+
+#battery.charging {
+    color: #94e2d5;
+}
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+/* -----------------------------------------------------
+ * Tooltip
+ * ----------------------------------------------------- */
+
 tooltip {
-  background-color: #1a1b26;
-  color: #dddddd;
-  padding: 5px 12px;
-  margin: 5px 0px;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  font-size: 12px;
+    background: #181825;
+    border: 1px solid #313244;
+    border-radius: 8px;
 }
 
+tooltip label {
+    color: #cdd6f4;
+}
 
+/* -----------------------------------------------------
+ * Calendar
+ * ----------------------------------------------------- */
+
+calendar {
+    background: #181825;
+    color: #cdd6f4;
+}
+
+calendar:selected {
+    background: #89b4fa;
+    color: #1e1e2e;
+}
