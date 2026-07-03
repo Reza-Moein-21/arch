@@ -56,6 +56,12 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    name = "Alacritty",
+    match = { class = "Alacritty" },
+    workspace = "1"
+})
+
+hl.window_rule({
     name = "chromium",
     match = { class ="chromium" },
     workspace = "2"

@@ -26,7 +26,8 @@ hl.bind(mainMod .. " + B",hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/toggle-way
 --------------------------------------------------
 
 hl.bind(mainMod .. " + W", hl.dsp.window.close())
-hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + C", hl.dsp.window.center())
 

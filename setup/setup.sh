@@ -14,7 +14,7 @@ packages=(
     ntfs-3g uwsm libnewt less zsh zsh-completions 
     wl-clipboard dunst pipewire wireplumber udisks2 udiskie
     zsh eza bat fd fzf zoxide ripgrep stow starship fontconfig man-db tmux remmina freerdp
-    power-profiles-daemon
+    power-profiles-daemon 
     # ghostty ghostty-nautilus
 
     # GNOME Desktop
@@ -27,7 +27,7 @@ packages=(
     nwg-look pop-gtk-theme pop-icon-theme inter-font
 
     # Graphics
-    nvidia-open nvidia-utils intel-media-driver
+    nvidia-dkms linux-headers nvidia-utils intel-media-driver
 
     # Hyprland
     hyprlock hypridle hyprpaper brightnessctl xdg-desktop-portal-hyprland
